@@ -1,4 +1,4 @@
-package br.com.Voluntario.jdbc;
+package br.com.voluntarionarede.jdbc;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,8 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.Voluntario.models.ONG;
-import br.com.Voluntario.models.Usuario;
+import br.com.voluntarionarede.models.ONG;
+import br.com.voluntarionarede.models.Usuario;
 
 public class ONGDao {
 		Connection conexao;

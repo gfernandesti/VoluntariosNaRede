@@ -2,8 +2,8 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="br.com.Voluntario.models.*"%>
-<%@ page import="br.com.Voluntario.jdbc.UsuarioDao"%>
+<%@ page import="br.com.voluntarionarede.models.*"%>
+<%@ page import="br.com.voluntarionarede.jdbc.UsuarioDao"%>
 <%
 	UsuarioDao dao = new UsuarioDao();
 	if (request.getParameter("login") != null) {

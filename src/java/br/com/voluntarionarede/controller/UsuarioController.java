@@ -1,4 +1,4 @@
-package br.com.Voluntario.controller;
+package br.com.voluntarionarede.controller;
 
 import java.io.IOException;
 
@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.Voluntario.jdbc.UsuarioDao;
-import br.com.Voluntario.models.Usuario;
+import br.com.voluntarionarede.jdbc.UsuarioDao;
+import br.com.voluntarionarede.models.Usuario;
 
 /**
  * Servlet implementation class UsuarioController

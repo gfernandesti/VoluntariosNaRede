@@ -1,4 +1,4 @@
-package br.com.Voluntario.models;
+package br.com.voluntarionarede.models;
 
 public class Causa {
 	int id;

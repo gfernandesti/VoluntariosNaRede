@@ -1,4 +1,4 @@
-package br.com.Voluntario.controller;
+package br.com.voluntarionarede.controller;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -11,10 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
-import br.com.Voluntario.jdbc.ONGDao;
-import br.com.Voluntario.jdbc.UsuarioDao;
-import br.com.Voluntario.models.ONG;
-import br.com.Voluntario.models.Usuario;
+import br.com.voluntarionarede.jdbc.ONGDao;
+import br.com.voluntarionarede.jdbc.UsuarioDao;
+import br.com.voluntarionarede.models.ONG;
+import br.com.voluntarionarede.models.Usuario;
 
 public class ONGController extends HttpServlet {
 	private static final long serialVersionUID = 1L;

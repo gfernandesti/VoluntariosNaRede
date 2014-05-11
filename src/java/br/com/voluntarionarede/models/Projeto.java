@@ -1,4 +1,4 @@
-package br.com.Voluntario.models;
+package br.com.voluntarionarede.models;
 
 import java.util.ArrayList;
 import java.util.Date;

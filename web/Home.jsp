@@ -3,8 +3,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <%@ include file="Head.jsp" %>
-<%@ page import="br.com.Voluntario.models.*"%>
-<%@ page import="br.com.Voluntario.jdbc.UsuarioDao"%>
+<%@ page import="br.com.voluntarionarede.models.*"%>
+<%@ page import="br.com.voluntarionarede.jdbc.UsuarioDao"%>
 <%
 	UsuarioDao dao = new UsuarioDao();
 	if (request.getParameter("login") != null) {

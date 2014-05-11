@@ -1,4 +1,4 @@
-package br.com.Voluntario.jdbc;
+package br.com.voluntarionarede.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
