@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.voluntarionarede.models.Usuario;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class UsuarioDao {
 	Connection conexao;
@@ -22,36 +24,37 @@ public class UsuarioDao {
 	// conexão com o Banco
 	// E atribuido a váriavel "conexao", que deve ser do tipo Connection
 	public UsuarioDao() {
-		new FabricaDeConexoes();
 		this.conexao = FabricaDeConexoes.getConnection();
 	}
 
 	// metodos que vão interagir com o banco
 	// Passo como parametro o objeto que desejo add no Banco
-	public void adiciona(Usuario usuario) {
+	public void adiciona(Usuario usuario){
 		// comando sql
 		String sql = "insert into Usuario"
-				+ "(Usuario_primeiroNome,Usuario_email)" + "values(?,?)";
+				+ "(Usuario_email,Usuario_senha)" + "values(?,?)";
 		// crio um objeto do tipo PreparedStatement para receber o comando sql
 		// desejado
 		// e setar os valores passados no formulário
-		try {
 		
-			PreparedStatement stmt = conexao.prepareStatement(sql);
+		        
+			PreparedStatement stmt;
+            try {
+                stmt = conexao.prepareStatement(sql);
+           
 			// método set exige como parameto(indice,atributo do objeto)
-			stmt.setString(1, usuario.getPrimeiroNome());
-			stmt.setString(2, usuario.getEmail());
+			stmt.setString(1, usuario.getEmail());
+			stmt.setString(2, usuario.getSenha());
 			//stmt.setObject(3, usuario.getEndereco());
 			//stmt.setDate(4, new Date(usuario.getCadastroNoSite().getTime()));
 
 			// executa ação no Banco
 			stmt.execute();
-			// fecha conexão com Banco
-                        System.out.println("entrou..");
 			stmt.close();
-		} catch (SQLException e) {
-			throw new RuntimeException(e);
-		}
+                         } catch (SQLException ex) {
+                System.out.println(ex);
+            }
+		
 	}
 
 	public List<Usuario> getLista() {
@@ -68,8 +71,8 @@ public class UsuarioDao {
 				Usuario usuario = new Usuario();
 				//Seta no objeto contato o q "rs" pegou no banco
 				usuario.setId(rs.getInt("Usuario_id"));
-				usuario.setPrimeiroNome(rs.getString("Usuario_primeiroNome"));
 				usuario.setEmail(rs.getString("Usuario_email"));
+				usuario.setSenha(rs.getString("Usuario_senha"));
 				/*usuario.setEndereco(rs.getObject(""));
 				// montando a data através do Calendar
 				Calendar data = Calendar.getInstance();
@@ -82,6 +85,7 @@ public class UsuarioDao {
 			}
 			rs.close();
 			stmt.close();
+                        System.out.println("listar ok");
 			return listadeusuarios;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
@@ -90,14 +94,14 @@ public class UsuarioDao {
 
 	public void altera(Usuario usuario) {
 
-		String sql = "update contatos set nome=?,email=?,"
+		String sql = "update Usuario set email=?,senha=?,"
 				+ "where id=?";
 		PreparedStatement stmt;
 		try {
 			stmt = conexao.prepareStatement(sql);
 
-			stmt.setString(1, usuario.getPrimeiroNome());
-			stmt.setString(2, usuario.getEmail());
+			stmt.setString(1, usuario.getEmail());
+			stmt.setString(2, usuario.getSenha());
 			/*stmt.setString(3, contato.getEndereco());
 			stmt.setDate(4, new Date(contato.getDataNascimento()
 					.getTimeInMillis()));*/
@@ -112,7 +116,7 @@ public class UsuarioDao {
 	public void remove(Usuario usuario) {
 		PreparedStatement stmt;
 		try {
-			stmt = conexao.prepareStatement("delete from contatos where id=?");
+			stmt = conexao.prepareStatement("delete from Usuario where id=?");
 			stmt.setLong(1, usuario.getId());
 			stmt.execute();
 			stmt.close();

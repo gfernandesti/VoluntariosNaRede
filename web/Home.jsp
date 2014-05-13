@@ -10,15 +10,15 @@
 	if (request.getParameter("login") != null) {
 
 		for (Usuario usuario : dao.getLista()) {
-			if (usuario.getPrimeiroNome().equals(
-					request.getParameter("nome"))
-					&& usuario.getEmail().equals(
-							request.getParameter("email"))) {
-				System.out.println(usuario.getPrimeiroNome());
+			if (usuario.getEmail().equals(
+					request.getParameter("Uemail"))
+					&& usuario.getSenha().equals(
+							request.getParameter("Usenha"))) {
+				System.out.println(usuario.getEmail());
 				session.setAttribute("userName",
-						request.getParameter("nome"));
+						request.getParameter("Uemail"));
 				session.setAttribute("userPass",
-						request.getParameter("email"));
+						request.getParameter("Usenha"));
 			}
 		}
 	} else if (request.getParameter("logoff") != null) {

@@ -9,15 +9,14 @@
 	if (request.getParameter("login") != null) {
 
 		for (Usuario usuario : dao.getLista()) {
-			if (usuario.getPrimeiroNome().equals(
-					request.getParameter("nome"))
-					&& usuario.getEmail().equals(
-							request.getParameter("email"))) {
-				System.out.println(usuario.getPrimeiroNome());
+			if (usuario.getEmail().equals(
+					request.getParameter("Uemail"))
+					&& usuario.getSenha().equals(
+							request.getParameter("Usenha"))) {
 				session.setAttribute("userName",
-						request.getParameter("nome"));
+						request.getParameter("Uemail"));
 				session.setAttribute("userPass",
-						request.getParameter("email"));
+						request.getParameter("Usenha"));
 			}
 		}
 	} else if (request.getParameter("logoff") != null) {
@@ -36,7 +35,7 @@
 
 <body>
 
-	<h2>Olá ${param.nome}, você foi cadastrado(a) com Sucesso!</h2>
+	<h2>Olá ${param.Uemail}, você foi cadastrado(a) com Sucesso!</h2>
 	<h3>Agora acesse sua área de Usuário no site!</h3>
 	<br>
 	<hr>
@@ -58,9 +57,9 @@
 
 			<!-- Text input-->
 			<div class="form-group">
-				<label class="col-md-4 control-label" for="Uemail"></label>
+				<label class="col-md-4 control-label" for="Uemaill"></label>
 				<div class="col-md-4">
-					<input id="Unome" name="nome" type="text" placeholder="Nome.."
+					<input id="Unome" name="Uemail" type="text" placeholder="Nome.."
 						class="form-control input-md" required="">
 
 				</div>
@@ -70,7 +69,7 @@
 			<div class="form-group">
 				<label class="col-md-4 control-label" for="passwordinput"></label>
 				<div class="col-md-4">
-					<input id="Uemail" name="email" type="text" placeholder="Email.."
+					<input id="Uemail" name="Usenha" type="text" placeholder="Email.."
 						class="form-control input-md" required="">
 
 				</div>

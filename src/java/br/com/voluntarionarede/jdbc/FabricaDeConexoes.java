@@ -12,7 +12,6 @@ public class FabricaDeConexoes {
 		try {
 			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/voluntarionaredebd","root","cancer");
-			System.out.println("Conectado com sucesso!");
 		} catch (SQLException e) {
 			System.out.println("Erro no caminho do Banco");
 			e.printStackTrace();

@@ -29,13 +29,14 @@ public class UsuarioController extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//PrintWriter out = response.getWriter();
-		          System.out.println("passou aqui");
+		
 		// buscando os parâmetros no request
-		String nome = request.getParameter("nome");
+		String email = request.getParameter("Uemail");
 		//String endereco = request.getParameter("endereco");
-		String email = request.getParameter("email");
+		String senha = request.getParameter("Usenha");
 		/*String dataEmTexto = request
 		.getParameter("dataNascimento");
 		Calendar cadastronosite = null;*/
@@ -53,17 +54,13 @@ public class UsuarioController extends HttpServlet {
 		}*/
 		// monta um objeto contato
 	    Usuario usuario = new Usuario();
-		usuario.setPrimeiroNome(nome);
-		//usuario.setEndereco(endereco);
 		usuario.setEmail(email);
+		//usuario.setEndereco(endereco);
+		usuario.setSenha(senha);
 		//usuario.setCadastroNoSite(cadastronosite);
-		   System.out.println("passou..");
+		   System.out.println("email: "+usuario.getEmail()+"senha:"+usuario.getSenha());
 		// salva o contato
-		UsuarioDao dao = null;
-		try {
-			dao = new UsuarioDao();
-		} catch (Exception e) {
-		}
+		UsuarioDao dao = new UsuarioDao();
 		dao.adiciona(usuario);
 		
 		// imprime o nome do contato que foi adicionado

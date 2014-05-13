@@ -21,28 +21,28 @@
 					<form class="form-horizontal" action="cadastrarUsu.do">
 						<fieldset>
 
-							<!-- Text input-->
+											<!-- Text input-->
 							<div class="form-group">
-								<label class="col-md-4 control-label" for="textinput"></label>
+								<label class="col-md-4 control-label" for="Uemail"></label>
 								<div class="col-md-4">
-									<input id="nome" name="nome" type="text"
-										placeholder="Nome do Voluntário" class="form-control input-md"
+									<input id="Uemail" name="Uemail" type="text"
+										placeholder="Digite seu email.." class="form-control input-md"
 										required="">
 
 								</div>
 							</div>
 
-							<!-- Text input-->
+							<!-- Password input-->
 							<div class="form-group">
-								<label class="col-md-4 control-label" for="Uemail"></label>
+								<label class="col-md-4 control-label" for="passwordinput"></label>
 								<div class="col-md-4">
-									<input id="email" name="email" type="text" placeholder="Email"
-										class="form-control input-md" required="">
+									<input id="passwordinput" name="Usenha" type="password"
+										placeholder="Digite sua senha.." class="form-control input-md" required="">
 
 								</div>
 							</div>
-
-
+                                                        <!-- Password input-->
+					
 							<!-- Button -->
 							<div class="form-group">
 								<div class="col-md-4">

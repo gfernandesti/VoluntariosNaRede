@@ -29,8 +29,8 @@
 							<div class="form-group">
 								<label class="col-md-4 control-label" for="Uemail"></label>
 								<div class="col-md-4">
-									<input id="Uemail" name="nome" type="text"
-										placeholder="LoginVoluntário" class="form-control input-md"
+									<input id="Uemail" name="Uemail" type="text"
+										placeholder="Digite seu email.." class="form-control input-md"
 										required="">
 
 								</div>
@@ -40,8 +40,8 @@
 							<div class="form-group">
 								<label class="col-md-4 control-label" for="passwordinput"></label>
 								<div class="col-md-4">
-									<input id="passwordinput" name="email" type="password"
-										placeholder="Senha" class="form-control input-md" required="">
+									<input id="passwordinput" name="Usenha" type="password"
+										placeholder="Digite sua senha.." class="form-control input-md" required="">
 
 								</div>
 							</div>
