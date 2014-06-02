@@ -1,17 +1,17 @@
 
+<%@page import="br.com.voluntarionarede.jdbc.VoluntarioDao"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="br.com.voluntarionarede.models.*"%>
-<%@ page import="br.com.voluntarionarede.jdbc.UsuarioDao"%>
 <%
-	UsuarioDao dao = new UsuarioDao();
+	VoluntarioDao dao = new VoluntarioDao();
 	if (request.getParameter("login") != null) {
 
-		for (Usuario usuario : dao.getLista()) {
-			if (usuario.getEmail().equals(
+		for (Voluntario voluntario : dao.getLista()) {
+			if (voluntario.getEmail().equals(
 					request.getParameter("Uemail"))
-					&& usuario.getSenha().equals(
+					&& voluntario.getSenha().equals(
 							request.getParameter("Usenha"))) {
 				session.setAttribute("userName",
 						request.getParameter("Uemail"));

@@ -4,17 +4,17 @@
 <html>
 <%@ include file="Head.jsp" %>
 <%@ page import="br.com.voluntarionarede.models.*"%>
-<%@ page import="br.com.voluntarionarede.jdbc.UsuarioDao"%>
+<%@ page import="br.com.voluntarionarede.jdbc.VoluntarioDao"%>
 <%
-	UsuarioDao dao = new UsuarioDao();
+	VoluntarioDao dao = new VoluntarioDao();
 	if (request.getParameter("login") != null) {
 
-		for (Usuario usuario : dao.getLista()) {
-			if (usuario.getEmail().equals(
+		for (Voluntario voluntario : dao.getLista()) {
+			if (voluntario.getEmail().equals(
 					request.getParameter("Uemail"))
-					&& usuario.getSenha().equals(
+					&& voluntario.getSenha().equals(
 							request.getParameter("Usenha"))) {
-				System.out.println(usuario.getEmail());
+				System.out.println(voluntario.getEmail());
 				session.setAttribute("userName",
 						request.getParameter("Uemail"));
 				session.setAttribute("userPass",

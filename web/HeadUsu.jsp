@@ -36,6 +36,33 @@
 <script src="angular.js"></script>
 <script type="text/javascript" src="lightbox.js"></script>
 
+<meta name="generator" content="TextMate http://macromates.com/">
+	<script src="jquery-1.5.2.min.js" type="text/javascript"></script>
+	<script src="jquery.maskedinput-1.3.min.js" type="text/javascript"></script>
+	
+	<script type="text/javascript">
 
+		function findCEP() {
+		    if($.trim($("#zipcode").val()) != ""){
+		        $("#ajax-loading").css('display','inline');
+		        $.getScript("http://cep.republicavirtual.com.br/web_cep.php?formato=javascript&cep="+$("#zipcode").val().replace("-", ""), function(){
+		            if(resultadoCEP["resultado"] == 1){
+		                $("#street").val(unescape(resultadoCEP["tipo_logradouro"])+" "+unescape(resultadoCEP["logradouro"]));
+		                $("#district").val(unescape(resultadoCEP["bairro"]));
+		                $("#city").val(unescape(resultadoCEP["cidade"]));
+		                $("#state").val(unescape(resultadoCEP["uf"]));
+		                $("#number").focus();
+		            }else{
+		                alert("Endereço não encontrado para o cep ");
+		            }
+		            $("#ajax-loading").hide();
+		        });
+		    }
+		}
+		$(document).ready(function(){
+		    $("#zipcode").mask("99999-999")
+		});
+
+	</script>
 </head>
 </html>

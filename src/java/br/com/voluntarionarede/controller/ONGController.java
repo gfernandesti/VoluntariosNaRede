@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
 import br.com.voluntarionarede.jdbc.ONGDao;
-import br.com.voluntarionarede.jdbc.UsuarioDao;
+import br.com.voluntarionarede.jdbc.VoluntarioDao;
 import br.com.voluntarionarede.models.ONG;
 import br.com.voluntarionarede.models.Usuario;
 
