@@ -1,12 +1,29 @@
-VoluntariosNaRede
-=================
-Bem Vindo ao VoluntárionaRede!
+Aplicação Web Voluntário na Rede !
 =====================
+
 
 ![enter image description here][2]
 
 
-O Voluntário na Rede é uma aplicação web que conecta pessoas e organizações, facilitando o engajamento nas mais diversas possibilidades de trabalho voluntário. 
+A idéia da aplicação web **Voluntário na Rede** é conectar pessoas que desejam fazer o bem com ONG’s que necessitam de voluntários. Usando as habilidade e disponibilidades para encontrar um voluntário para uma ONG.
+
+ **Se cadastrando em Voluntários na Rede você pode ajudar em causas como: **
+> - Meio Ambiente.
+> - Direitos Humanos.
+> - Proteção aos Animais.
+> - Direitos da Criança e do Adolescente.
+> - Combate a Pobreza.
+> - Consumo Consciente.
+> - Capacitação Profissional.
+> - Saúde
+> - Pessoas com Deficiência.
+
+
+ **Como rodar o projeto:**
+
+>git clone git@github.com: VoluntarionaRede / api.git
+>cd api
+>make install && make run
 
 ----------
 
