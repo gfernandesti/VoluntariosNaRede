@@ -7,7 +7,7 @@ Aplicação Web Voluntário na Rede !
 
 A idéia da aplicação web **Voluntário na Rede** é conectar pessoas que desejam fazer o bem com ONG’s que necessitam de voluntários. Usando as habilidade e disponibilidades para encontrar um voluntário para uma ONG.
 
- **Se cadastrando em Voluntários na Rede você pode ajudar em causas como: **
+<b>Se cadastrando em Voluntários na Rede você pode ajudar em causas como: </b>
 > - Meio Ambiente.
 > - Direitos Humanos.
 > - Proteção aos Animais.
